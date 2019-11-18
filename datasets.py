@@ -1,4 +1,22 @@
 import numpy as np
+
+def load_linear_example1():
+    """
+    >>> X,Y = load_linear_example1()
+    >>> X
+    array([[ 1,  4],
+           [ 1,  8],
+           [ 1, 13],
+           [ 1, 17]])
+    >>> X[0]
+    array([1, 4])
+    >>> Y
+    array([ 7, 10, 11, 14])
+    """
+    X = np.array([[1,4],[1,8],[1,13],[1,17]])
+    Y = np.array([7,10,11,14])
+    return X,Y
+
 def load_nonlinear_example1():
 
     """
@@ -12,10 +30,8 @@ def load_nonlinear_example1():
 
 def polynomial2_features(input):
     """
-    >>> import datasets
-    >>> X,Y = datasets.load_nonlinear_example1()
-    >>> ex_X = datasets.polynomial2_features(X)
-    >>> ex_X
+    >>> X,Y = load_nonlinear_example1()
+    >>> polynomial2_features(X)
     array([[ 1.  ,  0.  ,  0.  ],
            [ 1.  ,  2.  ,  4.  ],
            [ 1.  ,  3.9 , 15.21],
@@ -29,10 +45,8 @@ def polynomial2_features(input):
 
 def polynomial3_features(input):
     """
-    >>> import datasets
-    >>> X,Y = datasets.load_nonlinear_example1()
-    >>> ex_X = datasets.polynomial3_features(X)
-    >>> ex_X
+    >>> X,Y = load_nonlinear_example1()
+    >>> polynomial3_features(X)
     array([[ 1.   ,  0.   ,  0.   ,  0.   ],
            [ 1.   ,  2.   ,  4.   ,  8.   ],
            [ 1.   ,  3.9  , 15.21 , 59.319],
